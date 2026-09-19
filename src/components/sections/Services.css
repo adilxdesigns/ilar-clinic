@@ -1,0 +1,174 @@
+/* Section header */
+.svc__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+  flex-wrap: wrap;
+}
+.svc__header-left { flex: 1; min-width: 200px; }
+
+/* Tab switcher */
+.svc__tabs {
+  display: flex;
+  background: var(--clr-grey-50);
+  border: 1px solid var(--clr-grey-100);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.svc__tab {
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--clr-grey-600);
+  cursor: pointer;
+  transition: all var(--t-base) var(--ease-out);
+  border: none;
+}
+.svc__tab--active {
+  background: var(--clr-navy);
+  color: var(--clr-white);
+  box-shadow: var(--shadow-sm);
+}
+.svc__tab:not(.svc__tab--active):hover { color: var(--clr-navy); }
+
+/* Services grid */
+.svc__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--clr-grey-100);
+}
+
+/* Service item — editorial numbered row */
+.svc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-4);
+  border-bottom: 1px solid rgba(12, 26, 46, 0.08);
+  border-right: 1px solid rgba(12, 26, 46, 0.08);
+  transition: background var(--t-fast), transform var(--t-fast);
+  cursor: default;
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  margin: 6px;
+}
+
+.svc-item:hover {
+  background: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(12, 26, 46, 0.08);
+  transform: translateY(-2px);
+}
+
+.svc-item:hover .svc-item__icon-wrapper {
+  background: var(--clr-navy);
+  color: var(--clr-gold);
+}
+
+.svc-item:hover .svc-item__number { color: var(--clr-gold); }
+.svc-item:hover .svc-item__arrow  { opacity: 1; transform: translateX(3px); }
+
+.svc-item__icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(160, 120, 48, 0.12);
+  color: var(--clr-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--t-fast);
+}
+
+.svc-item__body { flex: 1; }
+
+.svc-item__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.svc-item__number {
+  font-family: var(--ff-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--clr-gold);
+  letter-spacing: var(--ls-tight);
+  font-variant-numeric: lining-nums tabular-nums;
+  background: rgba(160, 120, 48, 0.1);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.svc-item__title {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--clr-ink);
+  letter-spacing: -0.01em;
+}
+
+.svc-item__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+}
+
+.svc-item__arrow {
+  color: var(--clr-gold);
+  opacity: 0.3;
+  flex-shrink: 0;
+  transition: opacity var(--t-fast), transform var(--t-fast);
+  margin-top: 12px;
+}
+
+/* Expand / Collapse Button */
+.svc__expand-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+.svc__expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.75rem;
+  background: var(--clr-white);
+  color: var(--clr-navy);
+  border: 1.5px solid rgba(12, 26, 46, 0.15);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(12, 26, 46, 0.04);
+  transition: all var(--t-base) var(--ease-out);
+  cursor: pointer;
+}
+
+.svc__expand-btn:hover {
+  background: var(--clr-navy);
+  color: var(--clr-white);
+  border-color: var(--clr-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(12, 26, 46, 0.12);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .svc__header { flex-direction: column; align-items: flex-start; }
+  .svc__grid { grid-template-columns: 1fr; border-top: none; }
+  .svc-item { margin: 4px 0; }
+}
