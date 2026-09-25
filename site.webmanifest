@@ -1,0 +1,17 @@
+{
+  "name": "ILAR CLINIC",
+  "short_name": "ILAR CLINIC",
+  "description": "Best Orthopaedic & Gynaecology Clinic in Perambur, Chennai",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#1a3a6b",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
